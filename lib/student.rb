@@ -92,8 +92,8 @@ class Student
       FROM students
       WHERE grade = ?
     SQL
-    
-    DB[:conn].execute(sql, "10th").collect do |row|
+
+    DB[:conn].execute(sql, 10).collect do |row|
       Student.new_from_db(row)
       binding.pry
     end
