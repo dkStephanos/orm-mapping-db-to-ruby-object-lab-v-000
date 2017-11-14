@@ -93,7 +93,6 @@ class Student
       WHERE grade = ?
       LIMIT 1
     SQL
-    binding.pry
     DB[:conn].execute(sql, "10th").collect do |row|
       Student.new_from_db(row)
       binding.pry
