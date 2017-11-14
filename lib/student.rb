@@ -93,7 +93,7 @@ class Student
       WHERE grade = ?
       LIMIT ?
     SQL
-    #binding.pry
+    binding.pry
     DB[:conn].execute(sql, "10th", num_students)
   end
 
