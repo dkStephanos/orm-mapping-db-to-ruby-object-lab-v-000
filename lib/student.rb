@@ -91,7 +91,7 @@ class Student
       SELECT *
       FROM students
       WHERE grade = ?
-      LIMIT =?
+      LIMIT 1
     SQL
     #binding.pry
     DB[:conn].execute(sql, "10th", num_students.to_s).collect do |row|
