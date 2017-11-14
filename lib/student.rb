@@ -94,7 +94,9 @@ class Student
       LIMIT ?
     SQL
     #binding.pry
-    DB[:conn].execute(sql, "10th", num_students.to_s)
+    DB[:conn].execute(sql, "10th", num_students.to_s).collect do |row|
+      Student.new_from_db(row)
+    end
   end
 
 end
