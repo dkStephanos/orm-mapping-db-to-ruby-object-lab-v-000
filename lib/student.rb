@@ -2,7 +2,7 @@ class Student
   attr_accessor :id, :name, :grade
 
   def self.new_from_db(row)
-    student = Student.new.tap do
+    Student.new.tap do |student|
       student.id = row[0]
       student.name = row[1]
       student.grade = row[2]
