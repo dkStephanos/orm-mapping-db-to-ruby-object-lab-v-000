@@ -1,3 +1,5 @@
+require 'pry'
+
 class Student
   attr_accessor :id, :name, :grade
 
@@ -91,7 +93,7 @@ class Student
       WHERE grade = ?
       LIMIT ?
     SQL
-
+    binding.pry
     DB[:conn].execute(sql, "10th", num_students)
   end
 
