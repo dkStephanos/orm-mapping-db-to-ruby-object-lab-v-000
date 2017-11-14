@@ -95,8 +95,8 @@ class Student
     SQL
     #binding.pry
     DB[:conn].execute(sql, "10th", num_students).collect do |row|
-      binding.pry
       Student.new_from_db(row)
+      binding.pry
     end
   end
 
